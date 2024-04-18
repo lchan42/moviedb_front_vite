@@ -43,7 +43,7 @@ function Header() {
 	]
 
   return (
-	<div className='flex items-center gap-8'>
+	<div className='flex items-center gap-8 w-full'>
 		<div className='flex gap-8 items-center'>
 			<img src={logo} className='w-[200px] md:w-[300px] object-cover'/>
 			<div className='flex gap-8'>
