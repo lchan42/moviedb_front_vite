@@ -5,7 +5,8 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 function Slider() {
 	const imgBaseUrl = "https://image.tmdb.org/t/p/original"
 	const[movieList, setMovieList] = useState([])
-	// const elementRef=useRef
+	const elementRef = useRef()
+	const screenWidth = window.innerWidth - 108
 
 	useEffect(()=>{
 	getTrendingMovies()
@@ -18,15 +19,25 @@ function Slider() {
 	})
   }
 
+  const sliderRight=(element) => {
+	element.scrollLeft += screenWidth
+  }
+
+  const sliderLeft=(element) => {
+	element.scrollLeft -= screenWidth
+  }
+
   return (
 	<div>
-		<HiOutlineChevronLeft className='hidden md:block text-white text-[30px] absolute mx-8 mt-[200px] cursor-pointer'/>
-		<HiOutlineChevronRight className='hidden md:block text-white text-[30px] absolute mx-8 mt-[200px] cursor-pointer right-0'/>
-		<div className='flex overflow-x-auto w-full px-16 py-4 no-scrollbar'>
+		<HiOutlineChevronLeft className='hidden md:block text-white text-[30px] absolute mx-8 mt-[250px] cursor-pointer'
+		onClick={() => sliderLeft(elementRef.current)}/>
+		<HiOutlineChevronRight className='hidden md:block text-white text-[30px] absolute mx-8 mt-[250px] cursor-pointer right-0'
+		onClick={() => sliderRight(elementRef.current)}/>
+		<div className='flex overflow-x-auto w-full px-16 py-4 no-scrollbar scroll-smooth' ref={elementRef}>
 			{movieList.map((item, index) => (
 				<img src={imgBaseUrl+item.backdrop_path} alt={item.original_name+"img"} key={item.id}
-				className='min-w-full md:h-[400px]
-				object-cover object-left-top mr-5 rounded-md'/>
+				className='min-w-full md:h-[500px]
+				object-cover object-left-top mr-5 rounded-md hover:border-[4px] border-gray-400 transition-all duration-100 ease-in'/>
 			))}
 		</div>
 	</div>

@@ -19,3 +19,11 @@ https://axios-http.com/fr/docs/intro
 
 <!-- remove scoll bar (custom tailwind.config.js)-->
 https://www.youtube.com/watch?v=QnIXTFOtTZI
+
+
+<!-- genre id list movies (press try it !)-->
+https://developer.themoviedb.org/reference/genre-movie-list
+
+
+<!-- genre_id list TV show (press try it !)-->
+https://developer.themoviedb.org/reference/genre-tv-list
