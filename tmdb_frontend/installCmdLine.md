@@ -10,3 +10,6 @@ https://react-icons.github.io/react-icons/
 <!-- used icone locations-->
 https://react-icons.github.io/react-icons/icons/hi/
 https://react-icons.github.io/react-icons/icons/hi2/
+
+<!-- install axios-->
+https://axios-http.com/fr/docs/intro

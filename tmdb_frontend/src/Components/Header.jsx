@@ -46,9 +46,13 @@ function Header() {
 	<div className='flex items-center gap-8'>
 		<div className='flex gap-8 items-center'>
 			<img src={logo} className='w-[200px] md:w-[300px] object-cover'/>
-			{menu.map((item) => (
-				<HeaderItem name={item.name} Icon={item.icon} key={item.name}/>
-			))}
+			<div className='flex gap-8'>
+				{menu.map((item) => (
+					<HeaderItem name={item.name} Icon={item.icon} key={item.name}/>
+				))}
+			</div>
+
+
 		</div>
 	</div>
   )

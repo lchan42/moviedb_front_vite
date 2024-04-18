@@ -5,9 +5,8 @@ function HeaderItem({name, Icon}) {
 	<div className='
 	text-white flex items-center gap-2
 	text-[15px] font-semibold cursor-pointer hover:underline underline-offset-8'>
-		<Icon/>
-		<h2>{name}</h2>
-
+		<Icon />
+		<h2 className='hidden md:block'>{name}</h2>
 	</div>
   )
 }
