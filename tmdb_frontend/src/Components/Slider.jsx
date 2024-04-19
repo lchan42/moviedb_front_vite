@@ -9,13 +9,13 @@ function Slider() {
 	const screenWidth = window.innerWidth - 108
 
 	useEffect(()=>{
-	getTrendingMovies()
+		getTrendingMovies()
 	}, [])
 
   const getTrendingMovies = () => {
 	GlobalApi.getTrendingVideos.then(res => {
 		setMovieList(res.data.results)
-		console.log("printing movie list", movieList)
+		// console.log("printing movie list", movieList)
 	})
   }
 

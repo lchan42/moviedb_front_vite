@@ -21,9 +21,14 @@ https://axios-http.com/fr/docs/intro
 https://www.youtube.com/watch?v=QnIXTFOtTZI
 
 
-<!-- genre id list movies (press try it !)-->
+<!-- genre id list for movies and TvShow (press try it !)-->
 https://developer.themoviedb.org/reference/genre-movie-list
-
-
-<!-- genre_id list TV show (press try it !)-->
 https://developer.themoviedb.org/reference/genre-tv-list
+
+<!-- find url for exploring movie and tvshow -->
+https://developer.themoviedb.org/reference/discover-movie
+https://developer.themoviedb.org/reference/discover-tv
+
+
+<!-- Header warning issues mentionned here -->
+https://github.com/react-icons/react-icons/issues/931
