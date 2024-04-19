@@ -1,23 +1,52 @@
-import React, { useRef } from 'react'
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+import React, { forwardRef } from 'react'
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 
+function ScrollingChevron({reference}) {
 
-function ScrollingChevron({direction, ref}) {
-
-	// const elementRef = useRef()
 	const screenWidth = window.innerWidth - 108
 
-	const scrollLeft=(element) => {
+
+	const sliderLeft=(element) => {
 		element.scrollLeft -= screenWidth
-
 	}
-		return (
-			<>
-				<HiOutlineChevronLeft className='hidden md:block text-white text-[30px] absolute mx-8 mt-[250px] cursor-pointer'
-					onClick={() => scrollLeft(ref.current)}/>
-			</>
-		  )
 
+	const sliderRight=(element) => {
+		element.scrollLeft += screenWidth
+	}
+
+  return (
+	<div className="ChevronClass">
+		<HiOutlineChevronLeft
+			// onClick={() => sliderRight(elementRef.current)}
+			className='
+				hidden
+				md:block
+				text-white text-[30px]
+				absolute
+				mx-8 mt-[250px]
+				cursor-pointer
+				opacity-0
+				group-hover:opacity-100
+				transition-opacity duration-1000
+			'
+		/>
+		<HiOutlineChevronRight
+			className='
+				hidden
+				md:block
+				text-white text-[30px]
+				absolute
+				mx-8 mt-[250px]
+				cursor-pointer
+				right-0
+				opacity-0
+				group-hover:opacity-100
+				transition-opacity duration-1000
+			'
+		/>
+
+	</div>
+  )
 }
 
-export default {ScrollingChevron}
+export default ScrollingChevron
