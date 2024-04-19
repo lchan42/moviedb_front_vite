@@ -32,3 +32,6 @@ https://developer.themoviedb.org/reference/discover-tv
 
 <!-- Header warning issues mentionned here -->
 https://github.com/react-icons/react-icons/issues/931
+
+<!-- img configuration -->
+https://developer.themoviedb.org/reference/configuration-details
