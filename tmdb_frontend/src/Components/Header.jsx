@@ -38,9 +38,10 @@ function Header() {
 					{menu.map((item) => (
 						<HeaderItem name={item.name} Icon={item.icon} key={item.name} />
 					))}
-					<SearchBar />
 				</div>
+				<SearchBar className="focus-within:border-primary relative"/>
 			</div>
+
 		</div>
 	);
 }

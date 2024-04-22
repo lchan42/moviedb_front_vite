@@ -3,23 +3,16 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 
 function ScrollingChevron({elementRef}) {
 
-	const screenWidth = window.innerWidth - 108
-
+	const screenWidth = window.innerWidth -115
+	// const screenWidth = elementRef.current.offsetWidth
+	console.log(elementRef.current)
 
 	const sliderLeft=(element) => {
-		console.log("trying to slide element ", element)
-		console.log("screenWidth ", screenWidth)
-		console.log("element.scrollLeft", element.scrollLeft)
 		element.scrollLeft -= screenWidth
-		console.log("element.scrollLeft", element.scrollLeft)
 	}
 
 	const sliderRight=(element) => {
-		console.log("trying to slide element ", element)
-		console.log("screenWidth ", screenWidth)
-		console.log("element.scrollLeft", element.scrollLeft)
 		element.scrollLeft += screenWidth
-		console.log("element.scrollLeft", element.scrollLeft)
 	}
 
   return (
