@@ -7,12 +7,11 @@ function App() {
 
   return (
     <h1 className="">
-		<Header/>
+		  <Header/>
 
-		<Slider/>
-		{/* {console.log(import.meta.env.VITE_TEST_VAR)} */}
+		  <Slider/>
 
-    <GenreMovieList/>
+      <GenreMovieList/>
     </h1>
   )
 }
