@@ -7,18 +7,21 @@ const trendingUrl = movieBaseUrl+"/trending/all/day"+apiKey
 const urlMovieGenreList = movieBaseUrl+"/genre/movie/list"+apiKey;
 const urlTvShowGenreList = movieBaseUrl+"/genre/tv/list"+apiKey;
 const movieByGenreBaseURL = "https://api.themoviedb.org/3/discover/movie"
+const movieSearchBaseURL = "https://api.themoviedb.org/3/search/movie"
 
 /************* getters ************ */
 const getTrendingVideos = axios.get(trendingUrl)
 const getMovieGenreList = axios.get(urlMovieGenreList)
 const getTvShowGenreList = axios.get(urlTvShowGenreList)
 const getMovieByGenreId = (id) => axios.get(movieByGenreBaseURL+apiKey+"&with_genres="+id)
+const getMovieByName = (userInput) => axios.get(movieSearchBaseURL+apiKey+"&query="+userInput)
 
 export default {
 	getTrendingVideos,
   getMovieGenreList,
   getTvShowGenreList,
   getMovieByGenreId,
+  getMovieByName,
 }
 
 

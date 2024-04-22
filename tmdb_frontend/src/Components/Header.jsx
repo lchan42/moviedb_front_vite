@@ -9,26 +9,13 @@ import {
 } from "react-icons/hi2";
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
+import SearchBar from "./SearchBar";
+
+
 
 function Header() {
 
 	const menu = [
-		{
-			name: "HOME",
-			icon: HiHome,
-		},
-		{
-			name: "SEARCH",
-			icon: HiMagnifyingGlass,
-		},
-		{
-			name: "WATCHLIST",
-			icon: HiPlus,
-		},
-		{
-			name: "ORIGINALS",
-			icon: HiStar,
-		},
 		{
 			name: "MOVIES",
 			icon: HiPlayCircle,
@@ -37,16 +24,21 @@ function Header() {
 			name: "SERIES",
 			icon: HiTv,
 		},
+		{
+			name: "WATCHLIST",
+			icon: HiPlus,
+		},
 	];
 
 	return (
-		<div className="flex items-center gap-8 w-full">
+		<div className="flex w-full items-center gap-8">
 			<div className="flex gap-8 items-center">
 				<img src={logo} className="w-[200px] md:w-[300px] object-cover" />
-				<div className="flex gap-8">
+				<div className="flex gap-8 items-center font-semibold cursor-pointer">
 					{menu.map((item) => (
 						<HeaderItem name={item.name} Icon={item.icon} key={item.name} />
 					))}
+					<SearchBar />
 				</div>
 			</div>
 		</div>
