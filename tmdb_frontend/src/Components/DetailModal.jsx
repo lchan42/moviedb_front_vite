@@ -3,14 +3,11 @@ import { useStoreCtx } from '../Context/ContextProvider';
 import GlobalApi from '../Services/GlobalApi';
 import { IoCloseOutline } from "react-icons/io5";
 
+function DetailModal() {
 
-function DetailModal({ }) {
+	const { openModal, modalContent, openDetailModal, closeDetailModal } = useStoreCtx();
 
-	const { movieGenresList, openModal, setOpenModal, modalContent } = useStoreCtx();
-
-	const [open, setOpen] = useState(true)
-
-	if (!open) return null
+	if (!openModal || modalContent === undefined) return null
 
 	return (
 		<div
@@ -28,7 +25,7 @@ function DetailModal({ }) {
 				outline-none
 				focus:outline-none
 			'
-			onClick={() => setOpen(false)}
+			onClick={() => closeDetailModal(false)}
 		>
 			<div
 				className="content container relative md:container md:mx-auto "
@@ -36,7 +33,7 @@ function DetailModal({ }) {
 			>
 				{/* close button */}
 				<IoCloseOutline
-					onClick={() => setOpen(false)}
+					onClick={() => closeDetailModal(false)}
 					className=' cursor-pointer absolute size-5 right-0 text-white hover:size-7'/>
 				{/* poster */}
 					<img src={GlobalApi.imgBaseUrl+modalContent.backdrop_path} alt={modalContent.original_name+"img"}
@@ -50,11 +47,11 @@ function DetailModal({ }) {
 				{/* Detail*/}
 				<div className="modalContent bg-zinc-900 rounded-b-lg text-slate-100 flex overflow-hide">
 					<div className="content pt-2 pb-2">
-						<h1 className='text-4xl font-extrabold pt-2 pb-2 '>{modalContent.original_title}</h1>
+						<h1 className='text-4xl font-extrabold pt-2 pb-2 '>{modalContent.title}</h1>
 						<p className=' '> {modalContent.release_date}</p>
 						<p className=' pt-2 pb-2'> {modalContent.overview}</p>
 						<p> vote average : {modalContent.vote_average}</p>
-						<p> vote popularity : {modalContent.popularity}</p>
+						<p> popularity : {modalContent.popularity}</p>
 					</div>
 					{/* <div className="btnContainer pt-2 pb-2">
 						<button className=''>
@@ -68,4 +65,4 @@ function DetailModal({ }) {
 	)
 }
 
-export default DetailModal
+export default DetailModal;

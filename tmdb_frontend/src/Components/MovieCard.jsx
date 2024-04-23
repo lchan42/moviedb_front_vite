@@ -1,4 +1,9 @@
 import React from 'react'
+// import { useModal } from './DetailModal'
+import { useStoreCtx } from '../Context/ContextProvider';
+
+// import {DetailModal } from './DetailModal'
+
 
 /**
  *     "poster_sizes": [
@@ -15,6 +20,9 @@ import React from 'react'
 function MovieCard({movie}) {
 	const imgBaseUrl = "https://image.tmdb.org/t/p/w342"
 
+	// const { openDetailModal } = useModal();
+	const { openDetailModal } = useStoreCtx();
+
 	return (
 		<>
 			<img src={imgBaseUrl + movie.poster_path}
@@ -27,7 +35,9 @@ function MovieCard({movie}) {
 			transition-all
 			duration-1500
 			ease-in
-			'/>
+			'
+			onClick={() => openDetailModal(movie)}
+			/>
 		</>
 	)
 }

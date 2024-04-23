@@ -5,7 +5,7 @@ function ScrollingChevron({elementRef}) {
 
 	const screenWidth = window.innerWidth -115
 	// const screenWidth = elementRef.current.offsetWidth
-	console.log(elementRef.current)
+	// console.log(elementRef.current)
 
 	const sliderLeft=(element) => {
 		element.scrollLeft -= screenWidth

@@ -7,7 +7,7 @@ import Slider from './Components/Slider'
 function App() {
 
   return (
-    <h1 className="">
+    <>
 		  <Header/>
 
 		  <Slider/>
@@ -15,7 +15,7 @@ function App() {
       <DetailModal/>
 
       <GenreMovieList/>
-    </h1>
+    </>
   )
 }
 

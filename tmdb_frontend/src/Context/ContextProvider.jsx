@@ -151,48 +151,29 @@ export const CtxProvider = ({ children }) => {
         "name": "Western"
       }
   ]);
-  const [isLoading, setIsLoading] = useState(true)
+
 	const [openModal, setOpenModal] = useState(false)
-  const [modalContent, setModalContent] = useState(
-    {			"adult": false,
-    "backdrop_path": "/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg",
-    "genre_ids": [
-      878,
-      12
-    ],
-    "id": 438631,
-    "original_language": "en",
-    "original_title": "Dune",
-    "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
-    "popularity": 542.962,
-    "poster_path": "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-    "release_date": "2021-09-15",
-    "title": "Dune",
-    "video": false,
-    "vote_average": 7.791,
-    "vote_count": 11356}
-  )
+  const [modalContent, setModalContent] = useState({})
 
 
-  // useEffect(() => {
-  //   const promise1 = GlobalApi.getMovieGenreList.then((res) => {
-  //     setMovieGenresList(res.data.genres);
-  //   });
-  //   const promise2 =GlobalApi.getTvShowGenreList.then((res) => {
-  //     setTvShowGenresList(res.data.genres);
-  //   });
+  const openDetailModal = (movieData) => {
+    setModalContent(movieData);
+    setOpenModal(true);
+  };
 
-  //   Promise.all([promise1, promise2]).then(() => setIsLoading(false)).catch(reason => console.log(reason))
-  // }, []);
+  const closeDetailModal = () => {
+    setModalContent({});
+    setOpenModal(false);
+  };
+
 
   const ctx = {
-    // isLoading,
     movieGenresList,
     tvShowGenresList,
     openModal,
     modalContent,
-    setOpenModal,
-    setModalContent,
+    openDetailModal,
+    closeDetailModal,
   };
 
   return <StoreContext.Provider value={ctx}>{children}</StoreContext.Provider>;

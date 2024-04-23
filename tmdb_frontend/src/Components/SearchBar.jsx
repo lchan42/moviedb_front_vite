@@ -28,6 +28,7 @@ function SearchBar() {
 			text-white
 			text-[15px]
 			items-center
+			gap-2
 			font-semibold
 			cursor-pointer
 			hover:underline
