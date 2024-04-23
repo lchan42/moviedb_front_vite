@@ -8,7 +8,6 @@ function GenreMovieList() {
 	const { isLoading, movieGenresList, tvShowGenresList } = useStoreCtx();
 
 	const movieListRefs = movieGenresList.map(() => useRef());
-	// console.log(movieGenresList.current)
 
 	return (
 		<div>

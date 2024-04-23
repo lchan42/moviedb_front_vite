@@ -8,17 +8,26 @@ function SearchBar() {
 	const [input, setInput]= useState("")
 	const [searchSuggestion, setSearchSuggestion] = useState([])
 
-	useEffect(() => {
-		GlobalApi.getMovieByName(input).then(res => {
-			setSearchSuggestion(res.data.results)
-			console.log(res.data.results)
-		})
-	}, [input])
-
 	const handleClearSearch = () => {
 		setInput("")
 		setSearchSuggestion([])
 	}
+
+	useEffect(() => {
+		let timer;
+
+		const debounceSearch = () => {
+			clearTimeout(timer);
+
+			timer = setTimeout(() => {
+				GlobalApi.getMovieByName(input)
+				.then(res => { setSearchSuggestion(res.data.results) })
+				.catch(error => { console.error('Error fetching search results:', error) })
+			}, 200)
+		}
+		debounceSearch();
+		return () => clearTimeout(timer);
+	  }, [input]);
 
 	return (
 	<div className='flex gap-2 items-center '>
@@ -37,9 +46,11 @@ function SearchBar() {
 			'
 		>
 			<input
-				className='input:focus outline-none  w-full
+				className='
+				input:focus outline-none  w-full
 				bg-transparent
-				shadow border-b py-1 px-3 white leading-tight focus:shadow-outline"
+				shadow border-b py-1 px-3 white
+				leading-tight focus:shadow-outline"
 				'
 				placeholder="type to search..."
 				value={input}
