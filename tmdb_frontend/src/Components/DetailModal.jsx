@@ -36,7 +36,7 @@ function DetailModal() {
 					onClick={() => closeDetailModal(false)}
 					className=' cursor-pointer absolute size-5 right-0 text-white hover:size-7'/>
 				{/* poster */}
-					<img src={GlobalApi.imgBaseUrl+modalContent.backdrop_path} alt={modalContent.original_name+"img"}
+					<img src={GlobalApi.imgBaseUrl+modalContent.backdrop_path} alt={modalContent.original_name+" img"}
 						key={modalContent.id}
 						className='
 							w-full

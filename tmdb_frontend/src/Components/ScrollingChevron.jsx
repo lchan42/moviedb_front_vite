@@ -17,6 +17,7 @@ function ScrollingChevron({elementRef}) {
 
   return (
 	<div className="ChevronClass">
+
 		<HiOutlineChevronLeft
 			onClick={() => sliderLeft(elementRef.current)}
 			className='

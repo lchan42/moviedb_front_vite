@@ -44,11 +44,9 @@ function SearchBarSuggestion({search}) {
 					{/* image */}
 					<img src={imgBaseUrl + movie.poster_path}
 					className='h-[72px] min-w-[102px] w-[102px] rounded-md' />
-					{/* movie title */}
-
-					<div className=' px-3 truncate'>
-						<p>Title : {movie.title}</p>
-						{movie.release_date}
+					{/* movie title + date*/} {/* if notice too long title use truncate in className */}
+					<div className=' px-3'>
+						<p> {movie.title} ({ movie.release_date.slice(0, 4) }) </p>
 					</div>
 					{}
 				</div>

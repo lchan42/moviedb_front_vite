@@ -5,7 +5,7 @@ import ScrollingChevron from "./ScrollingChevron";
 
 function GenreMovieList() {
 
-	const { isLoading, movieGenresList, tvShowGenresList } = useStoreCtx();
+	const { movieGenresList, tvShowGenresList } = useStoreCtx();
 
 	const movieListRefs = movieGenresList.map(() => useRef());
 
