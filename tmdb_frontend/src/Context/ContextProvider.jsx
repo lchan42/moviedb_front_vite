@@ -152,7 +152,7 @@ export const CtxProvider = ({ children }) => {
       }
   ]);
   const [isLoading, setIsLoading] = useState(true)
-	const [openModal, setOpenModal] = useState(true)
+	const [openModal, setOpenModal] = useState(false)
   const [modalContent, setModalContent] = useState(
     {			"adult": false,
     "backdrop_path": "/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg",

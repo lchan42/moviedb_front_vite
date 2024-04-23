@@ -20,10 +20,10 @@ function Header() {
 			name: "MOVIES",
 			icon: HiPlayCircle,
 		},
-		{
-			name: "SERIES",
-			icon: HiTv,
-		},
+		// {
+		// 	name: "SERIES",
+		// 	icon: HiTv,
+		// },
 		{
 			name: "WATCHLIST",
 			icon: HiPlus,

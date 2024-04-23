@@ -28,7 +28,6 @@ function SearchBar() {
 			text-white
 			text-[15px]
 			items-center
-			gap-2
 			font-semibold
 			cursor-pointer
 			hover:underline
@@ -37,15 +36,20 @@ function SearchBar() {
 			'
 		>
 			<input
-				className='input:focus outline-none  w-full'
+				className='input:focus outline-none  w-full
+				bg-transparent
+				shadow border-b py-1 px-3 white leading-tight focus:shadow-outline"
+				'
 				placeholder="type to search..."
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 			/>
+			{/* close icon */}
 			{input !== "" && ( // Only show the cross icon if there's content in the input
 			 	<FaTimes onClick={handleClearSearch} />
 			)}
-			<SearchBarSuggestion search={searchSuggestion}/>
+			{/* search suggestion */}
+			<SearchBarSuggestion className="pb-10" search={searchSuggestion}/>
 		</div>
 	</div>
 	)

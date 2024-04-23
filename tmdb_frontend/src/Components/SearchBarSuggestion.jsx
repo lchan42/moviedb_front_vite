@@ -23,7 +23,7 @@ function SearchBarSuggestion({search}) {
   return (
 	<div className="
 		bg-zinc-800
-		bg-opacity-70
+		bg-opacity-80
 		absolute
 		top-[80px]
 		rounded-md
