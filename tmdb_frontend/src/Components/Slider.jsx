@@ -35,7 +35,8 @@ function Slider() {
 					<img
 						src={imgBaseUrl+item.backdrop_path} alt={item.original_name+"img"}
 						key={item.id}
-						className='min-w-full md:h-[500px]
+						className='
+						min-w-full md:h-[500px]
 						object-cover
 						object-left-top
 						mr-5

@@ -22,19 +22,19 @@ function SearchBarSuggestion({search}) {
 
   return (
 	<div className="
-		 bg-zinc-800
-		 bg-opacity-50
+		bg-zinc-800
+		bg-opacity-70
 		absolute
 		top-[80px]
 		rounded-md
 		bg-header
 		shadow-lg
 		max-h-96
-		 max-w-96
+		max-w-96
 		overflow-y-scroll">
 		<div className=''>
 			{search.map((movie, index) => (
-				<div key={index} className="flex">
+				<div key={index} className="flex hover:bg-slate-950 px-1">
 					{/* image */}
 					<img src={imgBaseUrl + movie.poster_path}
 					className='h-[72px] min-w-[102px] w-[102px] rounded-md' />

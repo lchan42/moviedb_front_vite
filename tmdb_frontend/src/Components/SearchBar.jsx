@@ -22,7 +22,7 @@ function SearchBar() {
 
 	return (
 	<div className='flex gap-2 items-center '>
-		<FaSearch id="search-icon"/>
+		<FaSearch id="search-icon" className="text-white" />
 		<div className='
 			flex
 			text-white
