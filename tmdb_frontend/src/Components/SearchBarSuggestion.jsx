@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStoreCtx } from '../Context/ContextProvider';
 
 /**
  *     "poster_sizes": [
@@ -19,6 +20,7 @@ function SearchBarSuggestion({search}) {
 	}
 
 	const imgBaseUrl = "https://image.tmdb.org/t/p/w154"
+	const { openDetailModal } = useStoreCtx();
 
   return (
 	<div className="
@@ -34,7 +36,11 @@ function SearchBarSuggestion({search}) {
 		overflow-y-scroll">
 		<div className=''>
 			{search.map((movie, index) => (
-				<div key={index} className="flex hover:bg-slate-950 px-1">
+				<div
+					key={index}
+					className="flex hover:bg-slate-950 px-1"
+					onClick={() => openDetailModal(movie)}
+				>
 					{/* image */}
 					<img src={imgBaseUrl + movie.poster_path}
 					className='h-[72px] min-w-[102px] w-[102px] rounded-md' />

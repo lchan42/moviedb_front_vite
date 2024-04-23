@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import GlobalApi from '../Services/GlobalApi'
 import ScrollingChevron from './ScrollingChevron';
+import { useStoreCtx } from '../Context/ContextProvider';
 
 function Slider() {
 	const imgBaseUrl = "https://image.tmdb.org/t/p/original"
 	const[movieList, setMovieList] = useState([])
+	const { openDetailModal } = useStoreCtx();
+
 	const elementRef = useRef()
 
 	useEffect(()=>{
@@ -31,10 +34,11 @@ function Slider() {
 					cursor-pointer
 					'
 				>
-				{movieList.map((item, index) => (
+				{movieList.map((movie, index) => (
 					<img
-						src={imgBaseUrl+item.backdrop_path} alt={item.original_name+"img"}
-						key={item.id}
+						loading='lazy'
+						src={imgBaseUrl+movie.backdrop_path} alt={movie.original_name+"img"}
+						key={movie.id}
 						className='
 						min-w-full md:h-[500px]
 						object-cover
@@ -45,6 +49,7 @@ function Slider() {
 						border-gray-400
 						transition-all duration-100 ease-in
 						'
+						onClick={() => openDetailModal(movie)}
 					/>
 				))}
 			</div>
