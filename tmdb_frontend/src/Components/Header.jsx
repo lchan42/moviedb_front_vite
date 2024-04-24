@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
 import logo from "./../assets/images/logo.png";
 import {
-	HiHome,
-	HiMagnifyingGlass,
-	HiStar,
 	HiPlayCircle,
 	HiTv,
 } from "react-icons/hi2";
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
 import SearchBar from "./SearchBar";
-
-
+import { useNavigate } from "react-router-dom";
 
 function Header() {
 
@@ -29,10 +25,15 @@ function Header() {
 			icon: HiPlus,
 		},
 	];
+	const navigate = useNavigate()
 
 	return (
 		<div className="p-2 flex w-full content-center justify-between">
-			<img src={logo} className="w-[100px] md:w-[200px] object-cover" />
+			<img
+				src={logo}
+				className="w-[100px] md:w-[200px] object-cover cursor-pointer"
+				onClick={() => navigate("/home")}
+			/>
 			<SearchBar />
 			<div className="flex ">
 				<div className="w-[0px] flex md:w-[100%] pl-8 pr-8 gap-8 font-semibold cursor-pointer">
