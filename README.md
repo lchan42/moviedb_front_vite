@@ -40,3 +40,7 @@ npm run dev
 ## Usage
 
 Open http://localhost:5173 in your browser to view the application.
+
+
+## Comment
+it is currently impossible to navigate in header link : movie, tvShor and Watchlist
