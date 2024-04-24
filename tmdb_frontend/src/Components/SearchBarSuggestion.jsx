@@ -48,7 +48,6 @@ function SearchBarSuggestion({search, focusOnSearch}) {
 					<div className=' pl-3 overflow-hidden'>
 						<p> {movie.title} ({ movie.release_date.slice(0, 4) }) </p>
 					</div>
-					{}
 				</div>
 			))}
 		</div>

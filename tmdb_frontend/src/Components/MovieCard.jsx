@@ -25,7 +25,7 @@ function MovieCard({movie}) {
 
 	return (
 		<>
-			<img src={imgBaseUrl + movie.poster_path}
+			<img loading="lazy" src={imgBaseUrl + movie.poster_path}
 			className='
 			w-[110px] md:w-[200px]
 			rounded-lg
