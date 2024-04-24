@@ -44,9 +44,10 @@ function SearchBar() {
 			underline-offset-8
 			w-full
 			max-w-screen-sm
+			relative
 			'
 		>
-			<div className=' w-[50%] md:w-[100%]'>
+			<div className=' w-[50%] md:w-[100%] object-top absolute '>
 				<input
 					id='searchBarId'
 					className='
@@ -64,12 +65,11 @@ function SearchBar() {
 				<SearchBarSuggestion search={searchSuggestion}/>
 			</div>
 
-			{/* close icon */}
-			{input !== "" && ( // Only show the cross icon if there's content in the input
-			 	<FaTimes onClick={handleClearSearch} />
-			)}
-
 		</div>
+				{/* close icon */}
+				{input !== "" && ( // Only show the cross icon if there's content in the input
+			<FaTimes onClick={handleClearSearch} className='text-white'/>
+		)}
 	</div>
 	)
 }

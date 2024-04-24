@@ -26,14 +26,14 @@ function SearchBarSuggestion({search}) {
 	<div className="
 		bg-zinc-800
 		bg-opacity-80
-		absolute
-		top-[80px]
 		rounded-md
 		bg-header
 		shadow-lg
-		max-h-96
+		max-h-[360px]
+		w-full
 		overflow-y-scroll
-		no-scrollbar">
+		no-scrollbar
+		absolute">
 		<div className=''>
 			{search.map((movie, index) => (
 				<div
