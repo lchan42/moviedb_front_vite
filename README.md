@@ -23,7 +23,7 @@ cd tmdb_frontend
 mkdir .env
 ```
 
-3. Inside the .env file, add the following line with your TMDb API key. Don't forget to replace "your_api_key" with your actual API key:
+3. Inside the .env file, add the following line with your TMDb API key. Don't forget to replace "your_api_key" with your actual API key and make sure to keep the double quotes::
 ``` bash
 VITE_API_KEY="your_api_key"
 ```
