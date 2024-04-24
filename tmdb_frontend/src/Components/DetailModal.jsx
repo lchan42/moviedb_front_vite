@@ -46,8 +46,8 @@ function DetailModal() {
 					/>
 				{/* Detail*/}
 				<div className="modalContent bg-zinc-900 rounded-b-lg text-slate-100 flex overflow-hide">
-					<div className="content pt-2 pb-2">
-						<h1 className='text-4xl font-extrabold pt-2 pb-2 '>{modalContent.title}</h1>
+					<div className="content pt-5 pb-5 pl-10 pr-10">
+						<h1 className='text-4xl font-extrabold pt-2 pb-2'>{modalContent.title}</h1>
 						<p className=' '> {modalContent.release_date}</p>
 						<p className=' pt-2 pb-2'> {modalContent.overview}</p>
 						<p> vote average : {modalContent.vote_average}</p>

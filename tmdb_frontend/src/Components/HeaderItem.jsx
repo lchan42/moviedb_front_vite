@@ -13,7 +13,7 @@ function HeaderItem({name, Icon, ...rest }) {
 		hover:underline
 		underline-offset-8'
 	>
-		{/* Icon has been removed due to dataSlot error */}
+		{/* Icon has been removed due to unsolvable dataSlot error */}
 		{/* <Icon {...rest}/>  */}
 		<h2 className='hidden md:block'>{name}</h2>
 	</div>

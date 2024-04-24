@@ -30,24 +30,25 @@ function SearchBar() {
 	  }, [input]);
 
 	return (
-	<div className='flex gap-2 items-center '>
+	<div className='flex gap-2 items-center'>
 		<FaSearch id="search-icon" className="text-white" />
 		<div className='
 			flex
 			text-white
 			text-[15px]
-			items-center
 			gap-2
 			font-semibold
 			cursor-pointer
 			hover:underline
 			underline-offset-8
-			 w-96
+			w-96
 			'
 		>
 			<input
+				id='searchBarId'
 				className='
-				input:focus outline-none  w-full
+				input:focus outline-none
+				w-[50%] md:w-[100%]
 				bg-transparent
 				shadow border-b py-1 px-3 white
 				leading-tight focus:shadow-outline"

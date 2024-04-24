@@ -31,17 +31,17 @@ function Header() {
 	];
 
 	return (
-		<div className="flex w-full items-center gap-8">
-			<div className="flex gap-8 items-center">
-				<img src={logo} className="w-[200px] md:w-[300px] object-cover" />
-				<div className="flex gap-8 items-center font-semibold cursor-pointer">
+		<div className="p-2 flex w-full content-center justify-between">
+			<img src={logo} className="w-[100px] md:w-[200px] object-cover" />
+			<SearchBar />
+			<div className="flex ">
+				<div className="w-[0px] flex md:w-[100%] pl-8 pr-8 gap-8 font-semibold cursor-pointer">
 					{menu.map((item) => (
 						<HeaderItem name={item.name} Icon={item.icon} key={item.name} />
 					))}
 				</div>
-				<SearchBar className="focus-within:border-primary relative"/>
-			</div>
 
+			</div>
 		</div>
 	);
 }
