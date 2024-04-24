@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 /************* URL ************ */
 const movieBaseUrl = "https://api.themoviedb.org/3"
-const apiKey = import.meta.env.VITE_API_KEY
+const apiKey = "?api_key="+ import.meta.env.VITE_API_KEY
 const trendingUrl = movieBaseUrl+"/trending/all/day"+apiKey
 const urlMovieGenreList = movieBaseUrl+"/genre/movie/list"+apiKey;
 const urlTvShowGenreList = movieBaseUrl+"/genre/tv/list"+apiKey;
