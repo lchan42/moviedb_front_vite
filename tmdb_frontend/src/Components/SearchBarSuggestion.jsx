@@ -32,8 +32,8 @@ function SearchBarSuggestion({search}) {
 		bg-header
 		shadow-lg
 		max-h-96
-		max-w-96
-		overflow-y-scroll">
+		overflow-y-scroll
+		no-scrollbar">
 		<div className=''>
 			{search.map((movie, index) => (
 				<div

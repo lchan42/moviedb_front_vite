@@ -30,39 +30,45 @@ function SearchBar() {
 	  }, [input]);
 
 	return (
-	<div className='flex gap-2 items-center'>
+	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full'>
 		<FaSearch id="search-icon" className="text-white" />
 		<div className='
 			flex
 			text-white
 			text-[15px]
+			items-center
 			gap-2
 			font-semibold
 			cursor-pointer
 			hover:underline
 			underline-offset-8
-			w-96
+			w-full
+			max-w-screen-sm
 			'
 		>
-			<input
-				id='searchBarId'
-				className='
-				input:focus outline-none
-				w-[50%] md:w-[100%]
-				bg-transparent
-				shadow border-b py-1 px-3 white
-				leading-tight focus:shadow-outline"
-				'
-				placeholder="type to search..."
-				value={input}
-				onChange={(e) => setInput(e.target.value)}
-			/>
+			<div className=' w-[50%] md:w-[100%]'>
+				<input
+					id='searchBarId'
+					className='
+					input:focus outline-none
+					bg-transparent
+					shadow border-b py-1 px-3 white
+					leading-tight focus:shadow-outline
+					w-full
+					'
+					placeholder="type to search..."
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+				/>
+				{/* search suggestion */}
+				<SearchBarSuggestion search={searchSuggestion}/>
+			</div>
+
 			{/* close icon */}
 			{input !== "" && ( // Only show the cross icon if there's content in the input
 			 	<FaTimes onClick={handleClearSearch} />
 			)}
-			{/* search suggestion */}
-			<SearchBarSuggestion className="pb-10" search={searchSuggestion}/>
+
 		</div>
 	</div>
 	)
