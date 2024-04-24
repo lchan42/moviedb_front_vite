@@ -1,9 +1,5 @@
 import React from 'react'
-// import { useModal } from './DetailModal'
 import { useStoreCtx } from '../Context/ContextProvider';
-
-// import {DetailModal } from './DetailModal'
-
 
 /**
  *     "poster_sizes": [
@@ -20,7 +16,6 @@ import { useStoreCtx } from '../Context/ContextProvider';
 function MovieCard({movie}) {
 	const imgBaseUrl = "https://image.tmdb.org/t/p/w342"
 
-	// const { openDetailModal } = useModal();
 	const { openDetailModal } = useStoreCtx();
 
 	return (

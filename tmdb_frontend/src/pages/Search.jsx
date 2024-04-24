@@ -15,9 +15,6 @@ function Search() {
 	const searchQuery = searchParams.get('search_query');
 	const [movies, setMovies] = useState([])
 
-
-	console.log("here : searchQuery", searchQuery)
-
 	useEffect(() => {
 		if (searchQuery) {
 			GlobalApi.getMovieByName(searchQuery)

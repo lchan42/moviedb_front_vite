@@ -4,8 +4,6 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 function ScrollingChevron({elementRef}) {
 
 	const screenWidth = window.innerWidth -115
-	// const screenWidth = elementRef.current.offsetWidth
-	// console.log(elementRef.current)
 
 	const sliderLeft=(element) => {
 		element.scrollLeft -= screenWidth

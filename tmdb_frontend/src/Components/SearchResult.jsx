@@ -1,8 +1,5 @@
-import React, { useRef } from 'react'
-import MovieCard from './MovieCard'
 import { useStoreCtx } from '../Context/ContextProvider';
 
-// can use justify center for un
 function SearchResult({movies}) {
 	const imgBaseUrl = "https://image.tmdb.org/t/p/w342"
 	const { openDetailModal } = useStoreCtx();

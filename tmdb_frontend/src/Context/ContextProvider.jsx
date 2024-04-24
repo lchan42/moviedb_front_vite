@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import GlobalApi from "../Services/GlobalApi";
+import { createContext, useContext, useState } from "react";
 
 const StoreContext = createContext();
 
