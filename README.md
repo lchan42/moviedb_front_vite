@@ -14,7 +14,7 @@ To run moviedb-front_vite locally, follow these steps:
 
 1. Clone the repository and navigate to the project folder:
 ```bash
-git clone https://github.com/yourusername/moviedb-front_vite.git
+git clone git@github.com:lchan42/moviedb_front_vite.git
 cd moviedb-front_vite
 cd tmdb_frontend
 ```
