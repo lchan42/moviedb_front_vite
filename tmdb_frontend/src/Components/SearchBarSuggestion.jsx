@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStoreCtx } from '../Context/ContextProvider';
 
 /**
@@ -14,8 +14,9 @@ import { useStoreCtx } from '../Context/ContextProvider';
  */
 
 
-function SearchBarSuggestion({search}) {
-	if (!search) {
+function SearchBarSuggestion({search, focusOnSearch}) {
+
+	if (!search || !focusOnSearch) {
 		return
 	}
 

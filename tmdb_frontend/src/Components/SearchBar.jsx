@@ -7,6 +7,7 @@ import SearchBarSuggestion from './SearchBarSuggestion';
 function SearchBar() {
 	const [input, setInput]= useState("")
 	const [searchSuggestion, setSearchSuggestion] = useState([])
+	const [focusOnSearch, setFocusOnSearch] = useState(false)
 
 	const handleClearSearch = () => {
 		setInput("")
@@ -30,7 +31,7 @@ function SearchBar() {
 	  }, [input]);
 
 	return (
-	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full'>
+	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full' onClick={() => setFocusOnSearch(false)}>
 		<FaSearch id="search-icon" className="text-white" />
 		<div className='
 			flex
@@ -60,16 +61,19 @@ function SearchBar() {
 					placeholder="type to search..."
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
+					onClick={(e) => {{
+						e.stopPropagation()
+						setFocusOnSearch(true)
+					}}}
 				/>
 				{/* search suggestion */}
-				<SearchBarSuggestion search={searchSuggestion}/>
+				<SearchBarSuggestion search={searchSuggestion} focusOnSearch={focusOnSearch}/>
 			</div>
-
 		</div>
-				{/* close icon */}
-				{input !== "" && ( // Only show the cross icon if there's content in the input
-			<FaTimes onClick={handleClearSearch} className='text-white'/>
-		)}
+			{/* close icon */}
+			{input !== "" && ( // Only show the cross icon if there's content in the input
+				<FaTimes onClick={handleClearSearch} className='text-white cursor-pointer'/>
+			)}
 	</div>
 	)
 }
