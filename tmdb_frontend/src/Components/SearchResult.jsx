@@ -12,6 +12,7 @@ function SearchResult({movies}) {
 		<div className='pt-10 p-4' >
 			{movies.map((movie, index) => (
 				<div
+					key={index}
 					className='group flex container md:container md:mx-auto hover:bg-zinc-700 hover:bg-opacity-70 rounded-md'
 					onClick={() => openDetailModal(movie)}
 				>

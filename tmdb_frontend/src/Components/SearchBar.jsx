@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { FaSearch, FaTimes } from "react-icons/fa";
 import GlobalApi from '../Services/GlobalApi'
 import SearchBarSuggestion from './SearchBarSuggestion';
+import { useNavigate } from 'react-router-dom';
 
 
 function SearchBar() {
 	const [input, setInput]= useState("")
 	const [searchSuggestion, setSearchSuggestion] = useState([])
 	const [focusOnSearch, setFocusOnSearch] = useState(false)
+	const navigate = useNavigate()
+
 
 	const handleClearSearch = () => {
 		setInput("")
@@ -32,7 +35,7 @@ function SearchBar() {
 	  }, [input]);
 
 	// catch click event
-	  useEffect(() => {
+	useEffect(() => {
 		const handleClickOutside = (event) => {
 			const searchBarId = document.getElementById('searchBarId');
 			if (searchBarId && !searchBarId.contains(event.target)) {
@@ -45,6 +48,14 @@ function SearchBar() {
 		  document.removeEventListener('click', handleClickOutside);
 		};
 	  }, []);
+
+	// nagivate to search page
+	const goToSearchPage = () => {
+		if (input) {
+			navigate(`/search?search_query=`+input)
+			setFocusOnSearch(false)
+		}
+	}
 
 	return (
 	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full'>
@@ -81,6 +92,7 @@ function SearchBar() {
 					onClick={() => {{
 						setFocusOnSearch(true)
 					}}}
+					onKeyDown={(e) => (e.key === 'Enter' ? goToSearchPage() : "")}
 				/>
 				{/* search suggestion */}
 				<SearchBarSuggestion search={searchSuggestion} focusOnSearch={focusOnSearch}/>
