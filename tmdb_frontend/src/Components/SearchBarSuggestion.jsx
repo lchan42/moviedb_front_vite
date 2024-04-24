@@ -13,14 +13,13 @@ import { useStoreCtx } from '../Context/ContextProvider';
     ],
  */
 
-
 function SearchBarSuggestion({search, focusOnSearch}) {
 
 	if (!search || !focusOnSearch) {
 		return
 	}
 
-	const imgBaseUrl = "https://image.tmdb.org/t/p/w154"
+	const imgBaseUrl = "https://image.tmdb.org/t/p/w92"
 	const { openDetailModal } = useStoreCtx();
 
   return (
@@ -30,7 +29,7 @@ function SearchBarSuggestion({search, focusOnSearch}) {
 		rounded-md
 		bg-header
 		shadow-lg
-		max-h-[360px]
+		max-h-[366px]
 		w-full
 		overflow-y-scroll
 		no-scrollbar
@@ -43,10 +42,10 @@ function SearchBarSuggestion({search, focusOnSearch}) {
 					onClick={() => openDetailModal(movie)}
 				>
 					{/* image */}
-					<img src={imgBaseUrl + movie.poster_path}
-					className='h-[72px] min-w-[102px] w-[102px] rounded-md' />
-					{/* movie title + date*/} {/* if notice too long title use truncate in className */}
-					<div className=' px-3'>
+					<img loading="lazy" src={imgBaseUrl + movie.poster_path}
+					className='h-[92px] min-w-[0px] w-auto rounded-md object-cover object-left-top ' />
+					{/* movie title + date*/}
+					<div className=' pl-3 overflow-hidden'>
 						<p> {movie.title} ({ movie.release_date.slice(0, 4) }) </p>
 					</div>
 					{}

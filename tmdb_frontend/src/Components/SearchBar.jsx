@@ -14,6 +14,7 @@ function SearchBar() {
 		setSearchSuggestion([])
 	}
 
+	// debounce API search
 	useEffect(() => {
 		let timer;
 
@@ -30,8 +31,23 @@ function SearchBar() {
 		return () => clearTimeout(timer);
 	  }, [input]);
 
+	// catch click event
+	  useEffect(() => {
+		const handleClickOutside = (event) => {
+			const searchBarId = document.getElementById('searchBarId');
+			if (searchBarId && !searchBarId.contains(event.target)) {
+				setFocusOnSearch(false)
+			}
+		}
+
+		document.addEventListener('click', handleClickOutside);
+		return () => {
+		  document.removeEventListener('click', handleClickOutside);
+		};
+	  }, []);
+
 	return (
-	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full' onClick={() => setFocusOnSearch(false)}>
+	<div className='flex gap-2 pl-5 pr-5 items-center justify-start md:justify-center w-full'>
 		<FaSearch id="search-icon" className="text-white" />
 		<div className='
 			flex
@@ -49,6 +65,7 @@ function SearchBar() {
 			'
 		>
 			<div className=' w-[50%] md:w-[100%] object-top absolute '>
+				{/* searchBar input */}
 				<input
 					id='searchBarId'
 					className='
@@ -61,8 +78,7 @@ function SearchBar() {
 					placeholder="type to search..."
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
-					onClick={(e) => {{
-						e.stopPropagation()
+					onClick={() => {{
 						setFocusOnSearch(true)
 					}}}
 				/>
@@ -71,7 +87,7 @@ function SearchBar() {
 			</div>
 		</div>
 			{/* close icon */}
-			{input !== "" && ( // Only show the cross icon if there's content in the input
+			{input !== "" && (
 				<FaTimes onClick={handleClearSearch} className='text-white cursor-pointer'/>
 			)}
 	</div>
